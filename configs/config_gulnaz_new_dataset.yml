@@ -1,0 +1,69 @@
+# Reload config file after any modification to see the changes on the notebook
+
+SETUP:
+  DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/09-08-2022 80 and 90 mrad and 60 with threshold/20220809_155732/5 60 mrad.mib'
+  DATA_SHAPE: [ 640,641 ] # (The shape mux include the flyback pixel in the y dimension )
+  CALIB_DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/09-08-2022 80 and 90 mrad and 60 with threshold/20220809_161924/6 60 mrad vacuum.mib'
+  SEMIANGLE: 60 # Semiangle in mrads
+  PATTERN_CALIBRATED: True
+  CAlIB_COOR: [138.0, 116.0, 109.50] # [cx, cy, r]
+  PLOT_SIZE: [ 49,60 ] #[20,25] #[49,60]
+  THRESHOLD_MULTUPLIER: 5 # lower this value to find more hot pixels. Values between 5 and 20 work well.
+  LOCAL: True
+ROI:
+  N_LINES: 3
+  LINE_WIDTHS: [2,5]
+  N_CIRCLES: 3
+  #CIRCLES_RADIUS: [5,10,20]
+  CIRCLES_RADIUS: [1,2,3,4,5]
+
+TEST:
+
+  BATCH_SIZE: 4
+  CUDA: False
+  MODEL_WEIGHTS: 'weights/segmentation/130_segmentor.tar'
+
+
+TRAINING:
+
+  ONLY_SAVE_FEATURES: False
+  MODEL: 'unet-efficient'
+  MODEL_DIR: 'models_effnet0_features/'
+  SAVE_MODEL_STEP: 10
+  AUGMENTATION: True
+
+  LOSS: 'bce'
+
+  EXPERIMENT_NAME: 'dislocations_segmentation_effnet-b0'
+  TRAINING_SET: 'dislocations' # possible 'us3d', 'dislocations'
+  NUM_CHANNELS: 1
+
+  NUM_WORKERS: 4
+  PIN_MEMORY: True
+
+  RESUME: ''
+  START_EPOCH: 0
+  EPOCHS: 150
+
+  BATCH_SIZE: 2
+  TEST_BATCH_SIZE: 2
+
+  BASE_LR: 0.001
+  LR_DECAY: 1e-6
+  MOMENTUM: 0.9
+
+  W_DECAY: 1e-4
+  OPTIMIZER: 'Adam'
+
+  AUG: False
+
+  CUDA: False
+  GPU_ID: 1
+
+  SEED: 42
+
+LOGGING:
+
+  ENABLE_LOGGING: True
+  LOG_DIR: 'logs_effnet0_features/'
+  LOG_INTERVAL: 1
