@@ -1,21 +1,21 @@
 # Reload config file after any modification to see the changes on the notebook
 
 SETUP:
-  DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/09-08-2022 80 and 90 mrad and 60 with threshold/20220809_155732/5 60 mrad.mib'
-  DATA_SHAPE: [ 640,641 ] # (The shape mux include the flyback pixel in the y dimension )
-  CALIB_DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/09-08-2022 80 and 90 mrad and 60 with threshold/20220809_161924/6 60 mrad vacuum.mib'
-  SEMIANGLE: 60 # Semiangle in mrads
+  DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/CryoSTEM/2022-12-08/20221208_145159/12 C2=70.mib'
+  DATA_SHAPE: [ 512,513 ] # (The shape mux include the flyback pixel in the y dimension )
+  CALIB_DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/CryoSTEM/2022-12-08/20221208_145159/12 C2=70.mib'
+  SEMIANGLE: 28 # Semiangle in mrads
   PATTERN_CALIBRATED: True
-  CAlIB_COOR: [138.0, 116.0, 109.50] # [cx, cy, r]
+  CAlIB_COOR: [129.0, 128.0, 108.50] # [cx, cy, r]
   PLOT_SIZE: [ 49,60 ] #[20,25] #[49,60]
   THRESHOLD_MULTUPLIER: 5 # lower this value to find more hot pixels. Values between 5 and 20 work well.
   LOCAL: True
 ROI:
   N_LINES: 3
-  LINE_WIDTHS: [2,5]
+  LINE_WIDTHS: [5]
   N_CIRCLES: 3
   #CIRCLES_RADIUS: [5,10,20]
-  CIRCLES_RADIUS: [1,2,3,4,5]
+  CIRCLES_RADIUS: [15,20,25,30,35]
 
 TEST:
 
