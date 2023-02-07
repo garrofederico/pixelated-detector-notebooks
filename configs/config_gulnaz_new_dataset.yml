@@ -1,12 +1,12 @@
 # Reload config file after any modification to see the changes on the notebook
 
 SETUP:
-  DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/CryoSTEM/2022-12-08/20221208_145159/12 C2=70.mib'
-  DATA_SHAPE: [ 512,513 ] # (The shape mux include the flyback pixel in the y dimension )
+  DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/2021-09-09 First test/STEM mode/02-test/20210909 153103/default.mib'
+  DATA_SHAPE: [ 360,441 ] # (The shape mux include the flyback pixel in the y dimension )
   CALIB_DATA_PATH: '../../Gulnaz_Ganeeva/Pixelated detector/CryoSTEM/2022-12-08/20221208_145159/12 C2=70.mib'
-  SEMIANGLE: 28 # Semiangle in mrads
+  SEMIANGLE: 60 # Semiangle in mrads
   PATTERN_CALIBRATED: True
-  CAlIB_COOR: [129.0, 128.0, 108.50] # [cx, cy, r]
+  CAlIB_COOR: [129.0, 125.0, 109.50] # [cx, cy, r]
   PLOT_SIZE: [ 49,60 ] #[20,25] #[49,60]
   THRESHOLD_MULTUPLIER: 5 # lower this value to find more hot pixels. Values between 5 and 20 work well.
   LOCAL: True
@@ -14,8 +14,8 @@ ROI:
   N_LINES: 3
   LINE_WIDTHS: [5]
   N_CIRCLES: 3
-  #CIRCLES_RADIUS: [5,10,20]
-  CIRCLES_RADIUS: [15,20,25,30,35]
+  CIRCLES_RADIUS: [5,10,20]
+  #CIRCLES_RADIUS: [15,20,25,30,35]
 
 TEST:
 
